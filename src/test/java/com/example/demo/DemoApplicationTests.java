@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -15,6 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 public class DemoApplicationTests {
 	@LocalServerPort
 	private int port = 8080;
@@ -22,15 +24,20 @@ public class DemoApplicationTests {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
+	@Autowired
+	private MockMvc mockMvc;
+
 	@Test
 	public void endPointShouldContainRaki1() throws Exception {
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/drinks",
 				String.class)).contains("Raki1");
 	}
 
-//	@Test
-//	public void statusOK() throws Exception {
-//		assertThat(this.restTemplate.getRootUri().
-//	}
+	@Test
+	public void shouldReturnStatusOK() throws Exception {
+		this.mockMvc.perform(get("http://localhost:" + port + "/drinks")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("Raki2")));
+	}
+
 
 }
