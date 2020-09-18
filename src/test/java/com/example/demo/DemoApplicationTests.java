@@ -18,26 +18,33 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class DemoApplicationTests {
-	@LocalServerPort
-	private int port = 8080;
+    @LocalServerPort
+    private int port = 8080;
 
-	@Autowired
-	private TestRestTemplate restTemplate;
+    @Autowired
+    private TestRestTemplate restTemplate;
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Test
-	public void endPointShouldContainRaki1() throws Exception {
-		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/drinks",
-				String.class)).contains("Raki1");
-	}
+    @Test
+    public void endPointShouldContainRaki1() throws Exception {
+        assertThat(
+                this.restTemplate
+                        .getForObject("http://localhost:" + port + "/drinks",
+                                String.class))
+                .contains("Raki1");
+    }
 
-	@Test
-	public void shouldReturnStatusOK() throws Exception {
-		this.mockMvc.perform(get("http://localhost:" + port + "/drinks")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("Raki2")));
-	}
-
+    @Test
+    public void shouldReturnStatusOK() throws Exception {
+        this.mockMvc
+                .perform(get("http://localhost:" + port + "/drinks"))
+                .andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(content()
+                        .string(containsString("Raki2")));
+    }
 
 }
