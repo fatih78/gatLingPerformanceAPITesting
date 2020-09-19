@@ -21,4 +21,9 @@ One annotation is able to create an whole entire API '@RepositoryRestResource'
 #TestCases
 See class 'DemoApplicationTests' for the unit tests
 
+# Used Libraries:
+restTemplate
+restAssured
+mockMvc
+
 
