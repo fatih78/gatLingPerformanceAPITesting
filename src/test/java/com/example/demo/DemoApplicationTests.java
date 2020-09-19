@@ -28,12 +28,48 @@ public class DemoApplicationTests {
     private MockMvc mockMvc;
 
     @Test
-    public void endPointShouldContainRaki1() throws Exception {
+    public void endPointShouldContainRaki() throws Exception {
         assertThat(
                 this.restTemplate
                         .getForObject("http://localhost:" + port + "/drinks",
                                 String.class))
-                .contains("Raki1");
+                .contains("Raki");
+    }
+
+    @Test
+    public void endPointShouldContainAlcoholic() throws Exception {
+        assertThat(
+                this.restTemplate
+                        .getForObject("http://localhost:" + port + "/drinks",
+                                String.class))
+                .contains("alcoholic");
+    }
+
+    @Test
+    public void endPointShouldContainNonAlcoholic() throws Exception {
+        assertThat(
+                this.restTemplate
+                        .getForObject("http://localhost:" + port + "/drinks",
+                                String.class))
+                .contains("non-alcoholic");
+    }
+
+    @Test
+    public void endPointShouldContainCola() throws Exception {
+        assertThat(
+                this.restTemplate
+                        .getForObject("http://localhost:" + port + "/drinks",
+                                String.class))
+                .contains("Cola");
+    }
+
+    @Test
+    public void endPointShouldContainGazoz() throws Exception {
+        assertThat(
+                this.restTemplate
+                        .getForObject("http://localhost:" + port + "/drinks",
+                                String.class))
+                .contains("Gazoz");
     }
 
     @Test
@@ -44,7 +80,7 @@ public class DemoApplicationTests {
                 .andExpect(status()
                         .isOk())
                 .andExpect(content()
-                        .string(containsString("Raki2")));
+                        .string(containsString("Cola")));
     }
 
 }
