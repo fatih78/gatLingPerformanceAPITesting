@@ -8,6 +8,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -28,6 +29,7 @@ public class DemoApplicationTests {
     private MockMvc mockMvc;
 
     @Test
+    //        restTemplate
     public void endPointShouldContainRaki() throws Exception {
         assertThat(
                 this.restTemplate
@@ -37,6 +39,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    //        restTemplate
     public void endPointShouldContainAlcoholic() throws Exception {
         assertThat(
                 this.restTemplate
@@ -46,6 +49,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    //        restTemplate
     public void endPointShouldContainNonAlcoholic() throws Exception {
         assertThat(
                 this.restTemplate
@@ -55,6 +59,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    //        restTemplate
     public void endPointShouldContainCola() throws Exception {
         assertThat(
                 this.restTemplate
@@ -64,6 +69,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    //        restTemplate
     public void endPointShouldContainGazoz() throws Exception {
         assertThat(
                 this.restTemplate
@@ -73,6 +79,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+//  mockMvc
     public void shouldReturnStatusOK() throws Exception {
         this.mockMvc
                 .perform(get("http://localhost:" + port + "/drinks"))
@@ -81,6 +88,18 @@ public class DemoApplicationTests {
                         .isOk())
                 .andExpect(content()
                         .string(containsString("Cola")));
+    }
+
+    @Test
+//    RestAssured
+    public void shouldContainABV() {
+        given().
+                when().
+                get("http://localhost:" + port + "/drinks").
+                then().
+                assertThat().
+                statusCode(200);
+
     }
 
 }
