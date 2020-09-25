@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello jQuery</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="drinks.js"></script>
-</head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <title>Drinks Page</title>
 
+</head>
 <body>
-<div>
-    <p class="greeting-id">The ID is </p>
-    <p class="greeting-content">The content is </p>
-</div>
+<div class="mypanel"></div>
+
+<script>
+  $.getJSON('https://cc038099824b.ngrok.io/drinks', function(data) {
+
+        var text = `Id: ${data.id}<br>
+                    Name: ${data.name}<br>
+                    Abv: ${data.abv}<br>`
+
+
+        $(".mypanel").html(text);
+    });
+</script>
 </body>
 </html>

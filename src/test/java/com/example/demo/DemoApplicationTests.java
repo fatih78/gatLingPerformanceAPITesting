@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class DemoApplicationTests {
     @LocalServerPort
-    private int port = 8080;
+    public int port = 8080;
 
     @Autowired
     private TestRestTemplate restTemplate;
