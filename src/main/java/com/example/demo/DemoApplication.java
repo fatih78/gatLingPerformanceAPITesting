@@ -25,52 +25,18 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurerAdapter() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				String urls = "http://localhost:9000";
-				CorsRegistration reg = registry.addMapping("/api/**");
-				for(String url: urls.split(",")) {
-					reg.allowedOrigins(url);
-				}
-			}
-		};
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("/drinks").allowedOrigins("http://localhost:8080");
-//            }
-//        };
-
-//	@Bean
-//	public CorsConfigurationSource corsConfigurationSource() {
-//		UrlBasedCorsConfigurationSource source = new
-//				UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-//		return source;
-//	}
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                String urls = "http://localhost:9000";
+                CorsRegistration reg = registry.addMapping("/api/**");
+                for (String url : urls.split(",")) {
+                    reg.allowedOrigins(url);
+                }
+            }
+        };
     }
 }
-
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		UrlBasedCorsConfigurationSource source = new
-//				UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-//		return new WebMvcConfigurer() {
-//			@Override
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/api/**").allowedOrigins("http://127.0.0.1:8080/drinks")
-//						.allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
-//						.allowedHeaders("*")
-//						.allowedOrigins("*")
-//						.exposedHeaders("Authorization");
-//			}
-//		};
-//	}
-
 
