@@ -1,15 +1,15 @@
-#Code en Running your SpringBoot Application
+# Code en Running your SpringBoot Application
 
 Run your application with class 'DemoApplication'
 Class 'Drink' contains the entities you're about to create
 Interface 'RestRepository' is needed for any CRUD operations for the partical table!
 
-#Properties
+# Properties
 
 Property below means that this is a memory Database, you need to start your applicatin first!
 spring.datasouce.url=jdbc:h2:mem:drinks
 
-#Viewing JSON Data from browser
+# Viewing JSON Data from browser
 
 Navigate to url below and see your JSON data:
 http://localhost:8080/drinks
@@ -17,12 +17,12 @@ http://localhost:8080/drinks
 Navigate to url below to CRUD your data from this url
 http://localhost:8080/explorer/index.html#uri=/
 
-#Remarks
+# Remarks
 
 One annotation is able to create an whole entire API '@RepositoryRestResource'
 
 
-#TestCases
+# TestCases
 
 See class 'DemoApplicationTests' for the unit tests
 
@@ -44,19 +44,19 @@ Run TestRunnerKarate.java
 
 See index.html in the genrated 'cucumber-report' directory
 
-#DevTools
+# DevTools
 
 brew install maven >> to install maven
 
 set the right variables in your .bash_profile
 
-#CommandLine from root directory
+# CommandLine from root directory
 
 mvn spring-boot:run
 
 mvn test
 
-#PortCommands
+# PortCommands
 
 lsof -n -i4TCP:8000 (portnumber)
 
