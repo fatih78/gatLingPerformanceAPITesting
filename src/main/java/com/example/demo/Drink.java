@@ -1,10 +1,5 @@
 package com.example.demo;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +11,10 @@ public class Drink {
 
 
     @Id// Id for the record level
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // since we don't want to generate the Id by ourself!
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // Be aware! Enabling code above makes Id's auto generated! We don't want that in our case because of our 'karateCREATE.feature'
+    // Drinks will contain three properties:
 
-    //    drinks will contain three properties:
     private long Id;
     private String origin;
     private String name;
@@ -48,6 +44,5 @@ public class Drink {
     }
 
     public String getCountry() { return origin; }
-
-    public void setCountry(String country) { this.origin = origin;}
+    public void setCountry(String country) { this.origin = origin; }
 }
