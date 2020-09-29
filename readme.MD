@@ -32,4 +32,17 @@ Start up your endpoint
 Run TestRunnerKarate.java
 See index.html in the genrated 'cucumber-report' directory
 
+#DevTools
+brew install maven >> to install maven
+set the right variables in your .bash_profile
+
+#CommandLine from root directory
+mvn spring-boot:run
+mvn test
+
+#PortCommands
+lsof -n -i4TCP:8000 (portnumber)
+ill -9 68453 (number is PID value from the list-command above)
+
+
 
