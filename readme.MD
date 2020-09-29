@@ -26,4 +26,10 @@ restTemplate
 restAssured
 mockMvc
 
+# Used e2e BDD TestCases with Karate
+karateGET.feature && karateCRUD.feature
+Start up your endpoint
+Run TestRunnerKarate.java
+See index.html in the genrated 'cucumber-report' directory
+
 
