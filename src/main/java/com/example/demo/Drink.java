@@ -11,10 +11,12 @@ public class Drink {
 
 
     @Id// Id for the record level
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // since we don't want to generate the Id by ourself!
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // Be aware! Enabling code above makes Id's auto generated! We don't want that in our case because of our 'karateCREATE.feature'
+    // Drinks will contain three properties:
 
-    //    drinks will contain three properties:
     private long Id;
+    private String origin;
     private String name;
     private String sort;
     private double abv;
@@ -32,9 +34,7 @@ public class Drink {
     public void setName(String name) {
         this.name = name;
     }
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name;}
 
     public void setAbv(double abv) {
         this.abv = abv;
@@ -43,5 +43,6 @@ public class Drink {
         return abv;
     }
 
-
+    public String getCountry() { return origin; }
+    public void setCountry(String country) { this.origin = origin; }
 }
