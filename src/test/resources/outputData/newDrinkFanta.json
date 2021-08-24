@@ -1,0 +1,15 @@
+{
+  "name" : "Fanta",
+  "sort" : "Non-Alcoholic",
+  "abv" : 0.0,
+  "country" : null,
+  "id" : 4,
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8000/drinks/4"
+    },
+    "drink" : {
+      "href" : "#ignore"
+    }
+  }
+}
