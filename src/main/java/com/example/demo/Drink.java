@@ -21,9 +21,6 @@ public class Drink {
     private String sort;
     private double abv;
 
-    public String getSort() { return sort; }
-    public void setSort(String sort) { this.sort = sort; }
-
     public void setId(long id) {
         Id = id;
     }
@@ -34,15 +31,30 @@ public class Drink {
     public void setName(String name) {
         this.name = name;
     }
-    public String getName() { return name;}
+    public String getName() {
+        return name.replace("\"", "");
+    }
 
-    public void setAbv(double abv) {
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+    public String getSort() {
+        return sort;
+    }
+
+    public void setCountry(String country) {
+        this.origin = origin;
+    }
+    public String getCountry() {
+        return origin;
+    }
+
+    public void setAbv(int abv) {
         this.abv = abv;
     }
     public double getAbv() {
         return abv;
     }
 
-    public String getCountry() { return origin; }
-    public void setCountry(String country) { this.origin = origin; }
+
 }

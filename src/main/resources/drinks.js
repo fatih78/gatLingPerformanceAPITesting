@@ -8,6 +8,7 @@ $(document).ready(function() {
     }
     ).then(function(data) {
        $('.drinks-id').append(data.id);
+        $('.drinks-id').append(data.name);
        $('.drinks-content').append(data.content);
     });
 });
