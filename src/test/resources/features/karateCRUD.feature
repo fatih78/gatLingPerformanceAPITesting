@@ -14,7 +14,7 @@ Feature: Testing CRUD: Create, Check and Delete on endpoint
     * def testData = Java.type('utils.TestDataGenerator')
     * def newDrink = karate.get('newDrink') != undefined ? newDrink : testData.generateDrink()
 
-  @CreateFantaDrink
+  @CreateNewDrink
   Scenario: creating extra set of data
     Given url baseUrl + 'drinks'
     And request inputData
@@ -24,23 +24,10 @@ Feature: Testing CRUD: Create, Check and Delete on endpoint
     When method post
     Then status 201
 
-  @GetNewDrink
-  Scenario: checking extra set of data
-#   The scenario can be runned sstandAlone by calling the right scenario/feature on which it is depending
-    * call read('karateCRUD.feature@CreateFantaDrink')
-    Given url baseUrl + 'drinks/' + 4
-    When method get
-    Then status 200
-    * print response
-#   check generated newDrink is in the response
-    And match $response.name == newDrink
-#   another check by full json comparison
-    And match response == outputData
-
   @DeleteNewDrink
   Scenario: deleting extra set of data
 #   The scenario can be runned standAlone by calling the right scenario/feature on which it is depending
-    * call read('karateCRUD.feature@GetNewDrink')
+    * call read('karateCRUD.feature@CreateNewDrink')
     Given url baseUrl + 'drinks/' + 4
     When method delete
     Then status 204

@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.web.servlet.MockMvc;
+import runners.TestRunnerKarate;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -99,6 +100,13 @@ public class DemoApplicationTests {
                 then().
                 assertThat().
                 statusCode(200);
+
+    }
+
+    @Test
+//    Karate
+    public void karateRun() throws InterruptedException {
+        TestRunnerKarate.testParallel();
 
     }
 

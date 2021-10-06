@@ -66,12 +66,12 @@
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
 			<artifactId>karate-junit5</artifactId>
-			<version>1.1.0</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
 			<artifactId>karate-core</artifactId>
-			<version>1.1.0</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
@@ -120,6 +120,12 @@
 			<version>3.0.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -134,6 +140,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
