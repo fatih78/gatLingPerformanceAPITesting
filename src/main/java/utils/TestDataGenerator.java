@@ -26,7 +26,13 @@ public class TestDataGenerator {
 
     public static String generateRandomEmail() {
         var timestamp = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-        return "dev.team.oplage.postman." + timestamp + "@dpgmedia.net";
+        return "test+" + timestamp + "@gmail.com";
+
+    }
+
+    public static String generateEncodedEmail() {
+        var MAIL = generateRandomEmail();
+        return MAIL.replaceAll("\\+", "%2B");
     }
 
     //futureDateWithDays - aanpassen

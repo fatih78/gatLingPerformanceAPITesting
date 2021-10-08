@@ -2,6 +2,7 @@
   "name" : "#ignore",
   "sort" : "Non-Alcoholic",
   "abv" : 0.0,
+  "email" : "#ignore",
   "country" : null,
   "id" : 4,
   "_links" : {

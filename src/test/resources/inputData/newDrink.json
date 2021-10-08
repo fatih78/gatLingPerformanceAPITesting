@@ -2,6 +2,7 @@
   "name": "${name}",
   "sort": "${sort}",
   "abv": 0,
+  "email" : "${email}",
   "id": 4,
   "country": "${country}"
 }

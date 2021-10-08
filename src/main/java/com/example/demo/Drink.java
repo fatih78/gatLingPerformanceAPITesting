@@ -1,8 +1,6 @@
 package com.example.demo;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 // tells that this is an entity that maps to a database
@@ -20,20 +18,18 @@ public class Drink {
     private String name;
     private String sort;
     private double abv;
+    private String email;
 
-    public void setId(long id) {
-        Id = id;
-    }
-    public long getId() {
-        return Id;
-    }
+    public void setId(long id) {Id = id;}
+    public long getId() {return Id;}
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) {this.name = name;}
+    public String getName() {return name.replace("\"", "");}
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public String getName() {
-        return name.replace("\"", "");
-    }
+    public String getEmail() {return email;}
 
     public void setSort(String sort) {
         this.sort = sort;
@@ -52,9 +48,8 @@ public class Drink {
     public void setAbv(int abv) {
         this.abv = abv;
     }
-    public double getAbv() {
-        return abv;
-    }
+    public double getAbv() {return abv;}
+
 
 
 }

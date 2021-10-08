@@ -34,6 +34,12 @@ public class UnitTests {
     }
 
     @Test
+    public void testEncodedEmail() {
+        var encodedMail = TestDataGenerator.generateEncodedEmail();
+        Assert.assertTrue(encodedMail.contains("%2B"));
+    }
+
+    @Test
     public void testRandomName() {
         var name = TestDataGenerator.generateDrink();
         Assert.assertTrue(name.contains("A") || name.contains("B") || name.contains("C") || name.contains("D") || name.contains("E") || name.contains("F") || name.contains("G") ||
