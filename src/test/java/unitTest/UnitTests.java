@@ -30,7 +30,7 @@ public class UnitTests {
     @Test
     public void testRandomEmail() {
         var futureDateOne = TestDataGenerator.generateRandomEmail();
-        Assert.assertTrue(futureDateOne.contains("@dpgmedia.net"));
+        Assert.assertTrue(futureDateOne.contains("@gmail.com"));
     }
 
     @Test
