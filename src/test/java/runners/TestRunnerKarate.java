@@ -6,7 +6,7 @@ import com.intuit.karate.Runner;
 import com.intuit.karate.core.Scenario;
 import com.intuit.karate.core.ScenarioResult;
 import com.intuit.karate.core.Step;
-import org.junit.Test;
+import cucumber.api.CucumberOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +48,7 @@ public class TestRunnerKarate {
             logger.error("Nothing failed, no need to rerun!");
         }
     }
+
 
     public static void main(String[] args) throws InterruptedException {
         TestRunnerKarate.testParallel();
