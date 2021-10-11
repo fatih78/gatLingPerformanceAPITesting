@@ -69,6 +69,7 @@ kill -9 68453 (number is PID value from the list-command above)
 ####Start the Jenkins service: brew services start jenkins-lts
 ####Restart the Jenkins service: brew services restart jenkins-lts
 ####Update the Jenkins version: brew upgrade jenkins-lts
+###use for redirecting local: ngrok http 8000
 
 
 
