@@ -31,8 +31,9 @@ public class UnitTests {
 
     @Test
     public void testRandomEmail() {
-        var futureDateOne = TestDataGenerator.generateRandomEmail();
-        Assert.assertTrue(futureDateOne.contains("@gmail.com"));
+        var email = TestDataGenerator.generateRandomEmail();
+        System.out.println(email);
+        Assert.assertTrue(email.contains("@gmail.com"));
     }
 
     @Test
@@ -44,6 +45,7 @@ public class UnitTests {
     @Test
     public void testRandomName() {
         var name = TestDataGenerator.generateDrink();
+        System.out.println(name);
         Assert.assertTrue(name.contains("A") || name.contains("B") || name.contains("C") || name.contains("D") || name.contains("E") || name.contains("F") || name.contains("G") ||
                 name.contains("H") || name.contains("I") || name.contains("J") || name.contains("K") || name.contains("L") || name.contains("M") || name.contains("N") ||
                 name.contains("O") || name.contains("P") || name.contains("Q") || name.contains("R") || name.contains("S") || name.contains("T") || name.contains("U") ||

@@ -67,6 +67,7 @@ kill -9 68453 (number is PID value from the list-command above)
 ####Install the latest LTS version: brew install jenkins-lts
 ####Install a specific LTS version: brew install jenkins-lts@YOUR_VERSION
 ####Start the Jenkins service: brew services start jenkins-lts
+####Stop the Jenkins service: brew services stop jenkins-lts
 ####Restart the Jenkins service: brew services restart jenkins-lts
 ####Update the Jenkins version: brew upgrade jenkins-lts
 ###use for redirecting local: ngrok http 8080
