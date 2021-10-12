@@ -10,7 +10,7 @@
       "href" : "http://localhost:8000/drinks/4"
     },
     "drink" : {
-      "href" : "#ignore"
+      "href" : "http://localhost:8000/drinks/4"
     }
   }
 }
