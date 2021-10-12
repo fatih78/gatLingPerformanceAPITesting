@@ -2,7 +2,6 @@
 Feature: Testing CREATE of the Drinks
 
   Background:
-    * def apiKey = key.getKey()
     * def baseUrl = 'http://localhost:8000/'
     * def fourth = 4
 
@@ -26,7 +25,6 @@ Feature: Testing CREATE of the Drinks
     And set inputData.sort = "Non-Alcoholic"
     And set inputData.email = email
     * print email
-    * print key
     And set inputData.country = "America"
     When method post
     Then status 201
