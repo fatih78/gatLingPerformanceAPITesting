@@ -1,8 +1,10 @@
 @karate
-Feature: Testing CREATE of the Drinks
+Feature: Testing CREATE of the Drinks With Headers
 
   Background:
+    * def key = Java.type('utils.Key')
     * def apiKey = key.getKey()
+    * configure headers = { Accept : 'application/json', x-api-key: '#(apiKey)' }
     * def baseUrl = 'http://localhost:8000/'
     * def fourth = 4
 
@@ -18,8 +20,7 @@ Feature: Testing CREATE of the Drinks
     * def email = karate.get('email') != undefined ? email : testData.generateRandomEmail()
     * def encodedEmail = karate.get('encodedEmail') != undefined ? encodedEmail : testData.generateEncodedEmail()
 
-  @CreateNewDrink
-  Scenario: creating extra set of data
+  Scenario: creating extra set of data with Headers
     Given url baseUrl + 'drinks'
     And request inputData
     And set inputData.name = newDrink
@@ -30,3 +31,4 @@ Feature: Testing CREATE of the Drinks
     And set inputData.country = "America"
     When method post
     Then status 201
+    * call read('b.Drink_DELETE.feature@DeleteNewDrink')

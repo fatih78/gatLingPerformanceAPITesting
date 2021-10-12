@@ -14,6 +14,9 @@ Feature: Print all Generated Testdata
     * def generateRandomInt = karate.get('generateRandomInt') != undefined ? generateRandomInt : testData.generateRandomInt()
     * def generateRandomAlphaNumeric = karate.get('generateRandomAlphaNumeric') != undefined ? generateRandomAlphaNumeric : testData.generateRandomAlphaNumeric()
 
+  #    x-api-key from the 'Key' class:
+    * def key = Java.type('utils.Key')
+    * def apiKey = key.getKey()
 
   Scenario: Print all Generated Testdata
     * print newDrink
@@ -25,4 +28,6 @@ Feature: Print all Generated Testdata
     * print generateTimeStamp
     * print generateRandomInt
     * print generateRandomAlphaNumeric
+    * print apiKey
+
 
