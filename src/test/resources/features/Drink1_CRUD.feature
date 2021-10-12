@@ -1,4 +1,4 @@
-@karate @ignore
+@karate
 Feature: Testing CRUD: Create, Check and Delete on endpoint
 
   Background:
