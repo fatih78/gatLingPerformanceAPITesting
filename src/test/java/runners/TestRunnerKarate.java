@@ -25,7 +25,7 @@ public class TestRunnerKarate {
                 .path("classpath:features")
                 .outputCucumberJson(true)
                 .tags("~@ignore")
-                .parallel(10);
+                .parallel(1);
         retry();
 
     }
