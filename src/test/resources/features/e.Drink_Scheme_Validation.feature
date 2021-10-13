@@ -2,13 +2,11 @@
 Feature: Testing SchemeValidation
 
   Background:
-    * def baseUrl = 'http://localhost:8000/'
-    * def fourth = 4
+    * url baseUrl
 
   Scenario: checking SchemeValidation
-#   The scenario can be runned standAlone by calling the right scenario/feature on which it is depending
     * call read('a.Drink_CREATE.feature@CreateNewDrink')
-    Given url baseUrl + 'drinks/' + fourth
+    Given path 'drinks/' + 4
     When method get
     Then status 200
     * print response

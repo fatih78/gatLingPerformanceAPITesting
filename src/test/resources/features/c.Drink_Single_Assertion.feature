@@ -3,8 +3,7 @@
 Feature: Testing GETS of the CREATED Drinks - SINGLE Line Assertions
 
   Background:
-    * def baseUrl = 'http://localhost:8000/'
-    * def fourth = 4
+    * url baseUrl
 
 #    Variable's from Helper class 'TestDataGenerator':
     * def testData = Java.type('utils.TestDataGenerator')
@@ -14,7 +13,7 @@ Feature: Testing GETS of the CREATED Drinks - SINGLE Line Assertions
   Scenario: checking the extra drink is PRESENT by single assertion
 #   The scenario can be runned standAlone by calling the right scenario/feature on which it is depending
     * call read('a.Drink_CREATE.feature@CreateNewDrink')
-    Given url baseUrl + 'drinks/' + 4
+    Given path 'drinks/' + 4
     When method get
     Then status 200
     And match response[*] contains newDrink
@@ -25,7 +24,7 @@ Feature: Testing GETS of the CREATED Drinks - SINGLE Line Assertions
   Scenario: checking the extra drink is NOT PRESENT anymore in the default data set
 #   The scenario can be runned standAlone by calling the right scenario/feature on which it is depending
     * call read('b.Drink_DELETE.feature@DeleteNewDrink')
-    Given url baseUrl + 'drinks'
+    Given path 'drinks'
     When method get
     Then status 200
     And match response[*] !contains newDrink

@@ -2,13 +2,12 @@
 Feature: Testing UPDATE (GETS) with Two different Assertions
 
   Background:
-    * def baseUrl = 'http://localhost:8000/'
-    * def fourth = 4
+    * url baseUrl
 
 
   Scenario: checking after UPDATE Assertion1
     * call read('d.Drink_PUT.feature@UpdateNewDrink')
-    Given url baseUrl + 'drinks/' + 4
+    Given path 'drinks/' + 4
     When method get
     Then status 200
     And match $response.name == "UPDATE_Drink"

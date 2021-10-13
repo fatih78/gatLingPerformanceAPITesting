@@ -2,10 +2,11 @@
 Feature: Testing CREATE of the Drinks
 
   Background:
-    * def baseUrl = 'http://localhost:8000/'
-    * def fourth = 4
+    * url baseUrl
+#   zonder global config file 'karate-config.js'
+#    * def baseUrl = 'http://localhost:8000/'
 
-#  Data - json files
+  #  Data - json files
     * def testData = Java.type('utils.TestDataGenerator')
     * def inputData = read('classpath:inputData/newDrink.json')
     * def jsonCreatedDrink = read('classpath:outputData/createdDrink.json')
@@ -19,7 +20,7 @@ Feature: Testing CREATE of the Drinks
 
   @CreateNewDrink
   Scenario: creating extra set of data
-    Given url baseUrl + 'drinks'
+    Given path 'drinks'
     And request inputData
     And set inputData.name = newDrink
     And set inputData.sort = "Non-Alcoholic"

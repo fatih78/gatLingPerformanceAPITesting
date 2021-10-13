@@ -2,10 +2,10 @@
 Feature: Testing CREATE of the Drinks With Headers
 
   Background:
+    * url baseUrl
     * def key = Java.type('utils.Key')
     * def apiKey = key.getKey()
     * configure headers = { Accept : 'application/json', x-api-key: '#(apiKey)' }
-    * def baseUrl = 'http://localhost:8000/'
     * def fourth = 4
 
 #  Data - json files
@@ -21,7 +21,7 @@ Feature: Testing CREATE of the Drinks With Headers
     * def encodedEmail = karate.get('encodedEmail') != undefined ? encodedEmail : testData.generateEncodedEmail()
 
   Scenario: creating extra set of data with Headers
-    Given url baseUrl + 'drinks'
+    Given path 'drinks'
     And request inputData
     And set inputData.name = newDrink
     And set inputData.sort = "Non-Alcoholic"
