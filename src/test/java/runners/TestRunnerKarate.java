@@ -20,7 +20,10 @@ public class TestRunnerKarate {
 
     public static void testParallel() throws InterruptedException {
 
-        System.setProperty("karate.env", "demo"); // ensure reset if other tests (e.g. mock) had set env in CI
+        // ensure reset if other tests (e.g. mock) had set env in CI > see 'karate-config.js'
+        System.setProperty("karate.env", "local");
+//        System.setProperty("karate.env", "something");
+
         results = Runner
                 .path("classpath:features")
                 .outputCucumberJson(true)

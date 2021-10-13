@@ -35,31 +35,21 @@ restAssured
 mockMvc
 
 # Used e2e BDD TestCases with Karate
-
 karateGET.feature && karateCRUD.feature
-
 Start up your endpoint
-
 Run TestRunnerKarate.java
-
 See index.html in the genrated 'cucumber-report' directory
 
 # DevTools
-
 brew install maven >> to install maven
-
 set the right variables in your .bash_profile
 
 # CommandLine from root directory
-
 mvn spring-boot:run
-
 mvn test
 
 # PortCommands
-
 lsof -n -i4TCP:8000 (portnumber)
-
 kill -9 68453 (number is PID value from the list-command above)
 
 # Jenkins
@@ -73,5 +63,22 @@ kill -9 68453 (number is PID value from the list-command above)
 ###use for redirecting local: ngrok http 8080
 ###http://d007-77-162-149-103.ngrok.io/github-webhook/ >>> enter in GitHub Webhook
 
+-------------------------------------------------------------------------------------
 
+# meetUp 13-10-2021
+#####starting the environment: 
+######endPoint
+######Github
+######Jenkins
+
+#####helper classes > unitTest
+#####karate config file
+#####suite-/feature-/scenario-run
+#####JSON body for data input
+#####Validations
+#####before&after steps
+#####pipeLine/GitHub/IntelliJ
+#####reporting: karate & cucumber
+#####parallel runs
+#####features pattern (calling each other)
 

@@ -18,6 +18,10 @@ Feature: Print all Generated Testdata
     * def key = Java.type('utils.Key')
     * def apiKey = key.getKey()
 
+  #    reading from the 'karate-config.js' file:
+    * def secretKey = apiKey2
+    * def urlFromConfigFile = baseUrl
+
   Scenario: Print all Generated Testdata
     * print newDrink
     * print email
@@ -29,5 +33,7 @@ Feature: Print all Generated Testdata
     * print generateRandomInt
     * print generateRandomAlphaNumeric
     * print apiKey
+    * print secretKey
+    * print urlFromConfigFile
 
 

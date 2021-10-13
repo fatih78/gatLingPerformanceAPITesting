@@ -26,8 +26,6 @@ Feature: Testing CREATE of the Drinks With Headers
     And set inputData.name = newDrink
     And set inputData.sort = "Non-Alcoholic"
     And set inputData.email = email
-    * print email
-    * print key
     And set inputData.country = "America"
     When method post
     Then status 201
