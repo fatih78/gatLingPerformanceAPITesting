@@ -65,12 +65,13 @@ kill -9 68453 (number is PID value from the list-command above)
 
 -------------------------------------------------------------------------------------
 
-# meetUp 13-10-2021
+# meetUp 13-10-2021 - Topics
 #####starting the environment: 
 ######endPoint
 ######Github
 ######Jenkins
 
+#####karate alternatives
 #####helper classes > unitTest
 #####karate config file
 #####suite-/feature-/scenario-run
@@ -81,6 +82,8 @@ kill -9 68453 (number is PID value from the list-command above)
 #####reporting: karate & cucumber
 #####parallel runs
 #####features pattern (calling each other)
+
+update
 
 -------------------------------------------------------------------------------------
 
