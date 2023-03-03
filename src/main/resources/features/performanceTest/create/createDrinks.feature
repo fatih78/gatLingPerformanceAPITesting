@@ -8,10 +8,7 @@ Feature: Testing CREATE of the Drinks
 
   #  Data - json files
     * def testData = Java.type('utils.TestDataGenerator')
-    * def inputData = read('classpath:inputData/newDrink.json')
-    * def jsonCreatedDrink = read('classpath:outputData/createdDrink.json')
-    * def enrichedData = read('classpath:outputData/enrichedData.json')
-    * def defaultData = read('classpath:outputData/defaultData.json')
+    * def inputData = read('classpath:helpers/newDrink.json')
 
 #    Variable's from Helper class 'TestDataGenerator':
     * def newDrink = karate.get('newDrink') != undefined ? newDrink : testData.generateDrink()
@@ -19,13 +16,41 @@ Feature: Testing CREATE of the Drinks
     * def encodedEmail = karate.get('encodedEmail') != undefined ? encodedEmail : testData.generateEncodedEmail()
 
   @CreateNewDrink
-  Scenario: creating extra set of data
+  Scenario Outline: creating extra set of data
     Given path 'drinks'
     And request inputData
     And set inputData.name = newDrink
     And set inputData.sort = "Non-Alcoholic"
     And set inputData.email = email
-    * print email
-    And set inputData.country = "America"
+    And set inputData.id = <id>
+    And set inputData.country = "Holland"
     When method post
     Then status 201
+    Examples:
+      | id |
+      | 4  |
+      | 5  |
+      | 6  |
+      | 7  |
+      | 8  |
+      | 9  |
+      | 10 |
+      | 11 |
+      | 12 |
+
+  @DeleteNewDrink
+  Scenario Outline: deleting extra set of data
+    Given path 'drinks/' + <id>
+    When method delete
+    Then status 204
+    Examples:
+      | id |
+      | 4  |
+      | 5  |
+      | 6  |
+      | 7  |
+      | 8  |
+      | 9  |
+      | 10 |
+      | 11 |
+      | 12 |

@@ -4,7 +4,7 @@ function fn() {
     var env = karate.env;
 
     var config = {
-        baseUrl: 'http://localhost:8000/',
+        baseUrl: 'http://localhost:8080/',
         apiKey2: '1234_from_karate-config.js'
     }
 
