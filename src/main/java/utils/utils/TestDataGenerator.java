@@ -1,7 +1,5 @@
 package utils;
 
-import com.fasterxml.uuid.Generators;
-import org.apache.commons.lang.RandomStringUtils;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -9,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
+import java.util.UUID;
 
 public class TestDataGenerator {
     private static final Random rand = new Random();
@@ -67,8 +66,8 @@ public class TestDataGenerator {
     }
 
     public static String generateUUID() {
-        var uuid1 = Generators.timeBasedGenerator().generate();
-        return uuid1.toString();
+       UUID uuid=UUID.randomUUID();
+        return uuid.toString();
     }
 
     public static String generateTimeStamp() {
@@ -77,11 +76,6 @@ public class TestDataGenerator {
 
     public static int generateRandomInt() {
         return rand.nextInt(MAX_RANDOM - 1) + 1;
-    }
-
-    @SuppressWarnings("unused")
-    public static String generateRandomAlphaNumeric() {
-        return RandomStringUtils.randomAlphanumeric(LENGTH).toUpperCase();
     }
 
 }
